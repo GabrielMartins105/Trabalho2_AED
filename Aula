@@ -1,0 +1,42 @@
+
+int maximumGain(char* s, int x, int y) {
+int v1 = x;
+int  v2 = y;
+int total=0;
+int c=0;
+int len = strlen(s);
+
+
+
+    char pilha[100];
+    char aux;
+    int topo = 0;
+
+
+for(c=0;c<len;c++){
+    
+  pilha[topo++] = s[c];
+
+
+   if(s[c] == 'a' && aux == 'b'){
+    total = total + v1;
+    topo = topo-2;
+    apo = 1;
+   }
+  if(s[c] == 'b' && aux == 'a'){
+    total = total + v2;
+    topo = topo-2;
+    apo = 1;
+  }
+    aux = s[c];
+  
+   
+}
+
+
+
+
+
+return total;
+    
+}
