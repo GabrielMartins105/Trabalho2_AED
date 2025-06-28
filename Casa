@@ -1,0 +1,54 @@
+
+int maximumGain(char* s, int x, int y) {
+int v1 = x;
+int  v2 = y;
+int total=0;
+int c=0;
+int len = strlen(s);
+
+
+
+    char *pilha = (char *)malloc(len + 1);
+    int topo = -1;
+
+
+for(c=0;c<len;c++){
+    
+  pilha[++topo] = s[c];
+
+
+   if(v1>=v2 && topo >= 1 && pilha[topo] == 'b' && pilha[topo-1] == 'a'){
+    total = total + v1;
+    topo = topo-2;
+    
+   }
+  if(v2 > v1 && topo >= 1 && pilha[topo] == 'a' && pilha[topo-1] == 'b'){
+    total = total + v2;
+    topo = topo-2;
+    
+  }
+    
+  
+   
+}
+
+int len2 = topo + 1;
+topo = -1;
+
+for(c=0;c<len2;c++){
+    pilha[++topo] = pilha[c];
+    if (v1>=v2 && topo >= 1 && pilha[topo] == 'a' && pilha[topo - 1] == 'b') {
+            topo -= 2; 
+            total += v2;
+        }
+    if (v2>v1 && topo >= 1 && pilha[topo] == 'b' && pilha[topo - 1] == 'a') {
+            topo -= 2; 
+            total += v1;
+        }
+}
+
+
+
+return total;
+    
+}
