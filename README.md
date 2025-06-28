@@ -27,6 +27,8 @@ Explanation:
 - Remove the "ba" underlined in "cdbcbbaa". Now, s = "cdbcba" and 5 points are added to the score.
 - Remove the "ba" underlined in "cdbcba". Now, s = "cdbc" and 5 points are added to the score.
 Total score = 5 + 4 + 5 + 5 = 19.
+</p>
+<p>
 Example 2:
 
 Input: s = "aabbaaxybbaabb", x = 5, y = 4
